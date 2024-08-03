@@ -1,82 +1,38 @@
-// import React, { useContext } from 'react'
+import React, { useContext } from 'react'
 
-// import './CSS/ShopCategory.css'
-// import { ShopContext } from '../Context/ShopContext'
-// import dropdown_icon from '../Components/Assets/dropdown_icon.png'
-// // import Item from '../Components/Assets/'
+import './CSS/ShopCategory.css'
+import { ShopContext } from '../Context/ShopContext'
+import dropdown_icon from '../Components/Assets/dropdown_icon.png'
+// import Item from '../Components/Assets/'
 
-// const ShopCategory =()=>{
-//     const {all_product} = useContext(ShopContext);
-//     return(
-//         <div className='shop-category'>
-//             <img className="shopcategory-banner" src="{props.banner}" alt="" />
-//             <div className='shopcategory-indexSort'>
-//                 <p>
-//                     <span>Showing 1-12</span>out of 36 products
-//                 </p>
-//                 <div className='shopcategory-sort'>
-//                     Sort by <img src="" alt=""/>
-//                 </div>
-//             </div>
-//             <div className="shopcategory-products">
-//                 {all_product.map=((item,i)=>{
-//                     if(prop.category==item.category){
-//                         return <Item key={i} id={item.id} name={item.name}  image={item.image} new_price={item.new_price} old_price={item.old_price}/>
-//                     }else{
-//                         return null;
-//                     }
-
-//                 })}
-//                 <div className="shopcategory-loadmore">Explore More</div>
-//             </div>
-//         </div>
-    
-//     )
-// }
-// export default ShopCategory
-
-
-import React, { useContext } from 'react';
-import './CSS/ShopCategory.css';
-import { ShopContext } from '../Context/ShopContext';
-import dropdown_icon from '../Components/Assets/dropdown_icon.png';
-
-const ShopCategory = (props) => {
-    const { all_product } = useContext(ShopContext);
-    return (
+const ShopCategory =()=>{
+    const {all_product} = useContext(ShopContext);
+    return(
         <div className='shop-category'>
-            <img className="shopcategory-banner" src={props.banner} alt="" />
+            <img className="shopcategory-banner" src="{props.banner}" alt="" />
             <div className='shopcategory-indexSort'>
                 <p>
-                    <span>Showing 1-12</span> out of 36 products
+                    <span>Showing 1-12</span>out of 36 products
                 </p>
                 <div className='shopcategory-sort'>
-                    Sort by <img src={dropdown_icon} alt=""/>
+                    Sort by <img src="" alt=""/>
                 </div>
             </div>
             <div className="shopcategory-products">
-                {all_product.map((item, i) => {
-                    if (props.category === item.category) {
-                        return (
-                            <div key={i} className="shopcategory-product">
-                                <img src={item.image} alt={item.name} className="shopcategory-product-image" />
-                                <div className="shopcategory-product-details">
-                                    <h3 className="shopcategory-product-name">{item.name}</h3>
-                                    <p className="shopcategory-product-price">
-                                        <span className="shopcategory-product-newprice">${item.new_price}</span>
-                                        {item.old_price && <span className="shopcategory-product-oldprice">${item.old_price}</span>}
-                                    </p>
-                                </div>
-                            </div>
-                        );
-                    } else {
+                {all_product.map=((item,i)=>{
+                    if(prop.category==item.category){
+                        return <Item key={i} id={item.id} name={item.name}  image={item.image} new_price={item.new_price} old_price={item.old_price}/>
+                    }else{
                         return null;
                     }
+
                 })}
                 <div className="shopcategory-loadmore">Explore More</div>
             </div>
         </div>
-    );
+    
+    )
 }
+export default ShopCategory
 
-export default ShopCategory;
+
