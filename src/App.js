@@ -8,6 +8,8 @@ import women_banner from './Components/Assets/banner_women.png';
 import kid_banner from './Components/Assets/banner_kids.png';
 import Product from './Pages/Product';
 import Footer from './Components/Footer/Footer'; // Import the Footer component
+import { Login } from './Components/login'; // Corrected import
+import { Signup } from './Components/signup';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path='/womens' element={<ShopCategory banner={women_banner} category="women" />} />
           <Route path='/kids' element={<ShopCategory banner={kid_banner} category="kid" />} />
           <Route path="/product/:productId" element={<Product />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
         <Footer />
         </BrowserRouter>
